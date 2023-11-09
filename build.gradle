@@ -8,6 +8,13 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
+configurations {
+    asciidoctorExtensions
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
 java {
     sourceCompatibility = '11'
 }
@@ -24,6 +31,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+    asciidoctorExtensions 'org.springframework.restdocs:spring-restdocs-asciidoctor'
 }
 
 tasks.named('test') {
@@ -34,4 +42,13 @@ tasks.named('test') {
 tasks.named('asciidoctor') {
     inputs.dir snippetsDir
     dependsOn test
+    configurations 'asciidoctorExtensions'
+    baseDirFollowsSourceFile()
+}
+
+bootJar {
+    dependsOn asciidoctor
+    from("${asciidoctor.outputDir}") {
+        into 'static/'
+    }
 }

@@ -1,0 +1,9 @@
+= REST Docs 연습
+:docktype: book
+:icons: font
+:source-highlighter: hihglightjs
+:toc: left
+:toclevels: 2
+:docinfo: shared-head
+
+include::hello.adoc[]

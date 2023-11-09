@@ -1,0 +1,6 @@
+[[Hello-API]]
+== Hello API
+
+[[hello]]
+=== hello
+operation::hello[snippets='http-request,http-response,response-fields']
