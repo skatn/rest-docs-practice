@@ -29,7 +29,4 @@ public class HelloController {
         }
     }
 
-    public enum HelloEnum {
-        A, B, C, D, E
-    }
 }

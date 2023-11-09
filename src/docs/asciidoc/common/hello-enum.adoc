@@ -1,14 +1,2 @@
-[[hello-enum]]
-|===
-|코드|코드명
-
-|`+A+`
-|`+A+`
-
-|`+B+`
-|`+B+`
-
-|`+C+`
-|`+C+`
-
-|===
+[[hello]]
+include::{snippets}/common/enum-response/enum-response-fields-hello.adoc[]
